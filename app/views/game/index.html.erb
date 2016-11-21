@@ -7,26 +7,16 @@
   </div>
   <div class="small-12 large-9 columns">
     <div class="callout primary">
-      <h6>For which country population, total is equal to 32.53 mln</h6>
+      <h6><%= @question %> is equal to <%= @answer.Value %></h6>
     </div>
 
     <div class="row small-up-4 medium-up-4 large-up-4">
+      <% @records.each do |r|%>
       <div class="column">
-        <img src="https://cdn0.iconfinder.com/data/icons/195-flat-flag-psd-icons/70/United-Kingdom.png" class="thumbnail" alt="">
-        <p>United Kingdom</p>
+        <%= image_tag(r.CountryName.tr(" ", "-"), :alt => r.CountryName, :class => "thumbnail") %>
+        <p><%= r.CountryName %></p>
       </div>
-      <div class="column">
-        <img src="https://cdn0.iconfinder.com/data/icons/195-flat-flag-psd-icons/70/United-Kingdom.png" class="thumbnail" alt="">
-        <p>Latvia</p>
-      </div>
-      <div class="column">
-        <img src="https://cdn0.iconfinder.com/data/icons/195-flat-flag-psd-icons/70/United-Kingdom.png" class="thumbnail" alt="">
-        <p>Saint Vincent and the Grenadines</p>
-      </div>
-      <div class="column">
-        <img src="https://cdn0.iconfinder.com/data/icons/195-flat-flag-psd-icons/70/United-Kingdom.png" class="thumbnail" alt="">
-        <p>United Kingdom</p>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
