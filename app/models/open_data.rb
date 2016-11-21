@@ -1,0 +1,2 @@
+class OpenData < ApplicationRecord
+end
