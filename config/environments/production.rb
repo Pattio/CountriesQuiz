@@ -56,6 +56,18 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "CountriesQuiz_#{Rails.env}"
   config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'countriesquiz.herokuapp.com' }
+
+  ActionMailer::Base.smtp_settings = {
+      :address        => 'smtp.mailgun.org',
+      :port           => '587',
+      :authentication => :plain,
+      :user_name      => 'postmaster@sandboxa1ea7e6db9d94054b7b123140d85a8f1.mailgun.org',
+      :password       => '72eef772953bc201be1654c1bd5fca0e',
+      :domain         => 'countriesquiz.heroku.com',
+      :enable_starttls_auto => true
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

@@ -22,17 +22,24 @@
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">Countries Quiz</li>
-        <li><a href="#">Play</a></li>
+        <li><%= link_to 'Play', root_path %></li>
         <li><a href="#">Explore</a></li>
         <li><a href="#">About</a></li>
         <li>
-        <a href="#">Edvinas</a>
-        <ul class="menu vertical">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Logout</a></li>
-        </ul>
-      </li>
+          <% if user_signed_in? %>
+            <a href="/"><%= current_user.name %></a>
+            <ul class="menu vertical">
+              <li><%= link_to 'Profile', edit_user_registration_path %></li>
+              <% if current_user.isAdmin? %>
+              <li><a href="#">Dashboard</a></li>
+              <% end %>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %> </li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% end %>
+        </li>
       </ul>
     </div>
     <div class="top-bar-right">
@@ -44,6 +51,8 @@
   </div>
 
     <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>
