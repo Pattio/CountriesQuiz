@@ -1,17 +1,46 @@
+<% if @answer %>
+
 // Update question
 $(".question h6").text("<%= @question %> is equal to <%= @answer.Value %>");
-
 
 // Remove old options
 $(".options").empty();
 
 // Add new options
 <% @records.each do |r| %>
-  $(".options").append("<div class='column'><%= escape_javascript link_to image_tag(r.CountryName.tr(' ', '-'), :alt => r.CountryName, :class => 'thumbnail'), root_path, data: { method: :post, remote: true, params: { country_id: r.id }.to_param } %></div>");
+  $(".options").append("<div class='column'><%= escape_javascript link_to image_tag(r.CountryName.tr(' ', '-'), :alt => r.CountryName, :class => 'flag') + '<p class=\'country_name\'>'.html_safe + r.CountryName + '</p>'.html_safe, root_path, data: { method: :post, remote: true, params: { country_id: r.id }.to_param } %></div>");
 <% end %>
 
-// Update score
-$(".score").text(<%= @score %>)
+(function() {
+    $(function() {
+        return $("a[data-remote]").hover(function() {
+            return $(this).children('img').addClass('active');
+        }, function() {
+            return $(this).children('img').removeClass('active');
+        });
+    });
+
+}).call(this);
 
 // Update question
-$(".question_number").text(<%= question_number @score %>)
+$(".question_number").text(<%= question_number @score %>);
+
+// Update score
+$(".score").text(<%= @score %>);
+
+// Update highscore
+$(".highscore").text(<%= @highscore %>);
+
+<% else %>
+
+var user_answer = $("a[data-params='country_id=<%= @guessID %>'] img");
+user_answer.addClass("wrong");
+
+var correct_answer = $("a[data-params='country_id=<%= @answerID %>'] img");
+correct_answer.addClass("correct")
+
+$("img.flag").unwrap()
+
+$( "<div class='callout alert wrong'><p class='expanded alert button'>GAME OVER</p><a href='<%= root_path %>'><button type='button' class='expanded primary button'>PLAY AGAIN</button></a>" ).insertAfter(".options");
+
+<% end %>

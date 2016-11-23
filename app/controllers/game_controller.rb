@@ -36,10 +36,12 @@ class GameController < ApplicationController
 
   def guess
     game_session = current_user.game_session
-    guessID = params[:country_id]
+    # TODO: Sanitize user guess
+    @guessID = params[:country_id]
+    @answerID = game_session.Answer.to_s
 
     respond_to do |format|
-      if guessID == game_session.Answer.to_s
+      if @guessID == @answerID
 
         @question = generate_question
         @records = OpenData.where(Description: @question).order("RANDOM()").limit(4)
@@ -47,9 +49,12 @@ class GameController < ApplicationController
         @score = game_session.Score
         @score += 50
         @highscore = current_user.highscore
+        @totalPlays = current_user.totalPlays + 1
+        current_user.update_attributes(totalPlays: @totalPlays)
 
         if @highscore < @score
-          current_user.update_attributes(highscore: @score)
+          @highscore = @score
+          current_user.update_attributes(highscore: @highscore)
         end
 
         options = String.new
@@ -57,15 +62,15 @@ class GameController < ApplicationController
           options << record.id.to_s
           options << "|" if @records.last != record
         end
-        current_user.game_session.update_attributes(Question: @question, Score: @score, Answer: @answer.id, Options: options)
+        game_session.update_attributes(Question: @question, Score: @score, Answer: @answer.id, Options: options)
 
-        @response = "Correct"
         format.html { redirect_to root_path }
         format.js { }
       else
-        @response = "Incorrect"
+        current_user.game_session = nil
         format.html { redirect_to root_path }
         format.js { }
+        # format.js { render :js => 'window.location.replace("http://stackoverflow.com");' }
       end
     end
   end

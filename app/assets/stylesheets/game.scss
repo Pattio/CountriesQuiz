@@ -6,9 +6,36 @@
   margin-top: 4rem;
   .info-panel {
     padding-top: 1em;
-    border: 1px solid #ebebeb;
+    border: 0.05em solid #ebebeb;
   }
-  .flag {
 
+  .flag {
+    border: 0.2em solid #ebebeb;
+    border-radius: 1rem;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
+
+  .flag.active{
+    border-color: #333333;
+  }
+
+  .flag.wrong, .flag.wrong:hover {
+    border-color: red;
+  }
+
+  .flag.correct, .flag.correct:hover {
+    border-color: green;
+  }
+
+  .callout.wrong {
+    margin-top: 3rem;
+  }
+
+  .callout.wrong .title {
+    text-align: center;
+  }
+
 }
