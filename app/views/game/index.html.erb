@@ -1,16 +1,16 @@
 <div class="game-screen row">
   <div class="small-12 large-3 columns info-panel">
     <button type="button" class="expanded primary button"><strong>Game Info</strong></button>
-    <button type="button" class="expanded success button">Question:</button>
-    <button type="button" class="expanded success button">Score: </button>
-    <button type="button" class="expanded success button">High Score: </button>
+    <button type="button" class="expanded success button">Question: <a class="question_number"><%= question_number current_user.game_session.Score %></a></button>
+    <button type="button" class="expanded success button">Score: <a class="score"><%= current_user.game_session.Score %></a></button>
+    <button type="button" class="expanded success button">High Score: <a class="highscore"> <%= current_user.highscore %></a></button>
   </div>
   <div class="small-12 large-9 columns">
-    <div class="callout primary">
+    <div class="callout primary question">
       <h6><%= @question %> is equal to <%= @answer.Value %></h6>
     </div>
-
-    <div class="row small-up-4 medium-up-4 large-up-4">
+    <%= @session %>
+    <div class="row small-up-4 medium-up-4 large-up-4 options">
       <% @records.each do |r|%>
       <div class="column">
         <%= link_to image_tag(r.CountryName.tr(" ", "-"), :alt => r.CountryName, :class => "thumbnail"), root_path, data: { method: :post, remote: true, params: { country_id: r.id }.to_param } %>

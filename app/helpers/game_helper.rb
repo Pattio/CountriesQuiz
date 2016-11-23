@@ -23,4 +23,8 @@ module GameHelper
   def generate_question
     @@questionCategories.sample
   end
+
+  def question_number(score)
+    score / 50 + 1
+  end
 end
