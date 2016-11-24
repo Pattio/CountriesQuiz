@@ -1,0 +1,56 @@
+lt:
+  menu:
+    name: "Meniu"
+    play: "Žaisti"
+    explore: "Naršyti"
+    profile: "Profilis"
+    logout: "Atsijungti"
+    sign_in: "Prisijungti"
+    sign_up: "Registruotis"
+    search: "Ieškoti"
+    search_placeholder: "Ieškoti šalies"
+  game:
+    info: "Žaidimo informacija"
+    question: "Klausimas:"
+    score: "Rezultatas:"
+    highscore: "Rekordas:"
+  explore:
+    name: "Šalies pavadinimas"
+    flag: "Vėliava"
+    current: "Dabartinis"
+    description: "Duomenu aprašymas"
+    results: "Rezultatai"
+  profile:
+    edit: "Redaguoti profilį"
+    name: "Vardas"
+    email: "El. paštas"
+    waiting: "Laukiame patvirtinimo iš el. pašto"
+    password: "Slaptažodis"
+    password_info: "palikite tuščią, jei nenorite redaguoti"
+    password_min: "simboliai mažiausiai"
+    password_confirm: "Slaptažodžio patvirtinimas"
+    password_current: "Dabartis slaptažodis"
+    password_current_info: "norėdami išsaugoti pakeitimus turite patvirtinti dabartinį slaptažodį"
+    update: "Atnaujinti"
+    delete: "Ištrinti mano paskyrą"
+    confirm: "Ar tikrai norite ištrinti?"
+    back: "Grįžti atgal"
+  activerecord:
+    attributes:
+        user:
+          name: "Vardas"
+          email: "El. paštas"
+          password: "Slaptažodis"
+          password_confirmation: "Pakartokite slaptažodį"
+          current_password: "Dabartinis slaptažodis"
+          remember_me: "Atsiminti mane"
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "Dabartinis slaptažodis tuščias"
+            email:
+              blank: "negali būt tuščias"
+            password:
+              blank: "negali būti tuščias"

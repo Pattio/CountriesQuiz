@@ -15,7 +15,7 @@ class GameController < ApplicationController
       @records = OpenData.where(Description: @question).order("RANDOM()").limit(4)
       @answer = @records.sample
       @unit = @answer.Unit
-      
+
       options = String.new
       @records.each do |record|
         options << record.id.to_s

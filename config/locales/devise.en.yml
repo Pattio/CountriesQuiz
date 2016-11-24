@@ -2,6 +2,14 @@
 
 en:
   devise:
+    questions:
+      receive_confirmation: "Didn't receive confirmation instructions?"
+      receive_unlock: "Didn't receive unlock instructions?"
+      password: "Forgot your password?"
+    actions:
+      send_password: Send me reset password instructions
+      resend_confirmation: "Resend confirmation instructions"
+      resend_unlock: "Resend unlock instructions"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."

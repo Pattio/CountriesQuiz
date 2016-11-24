@@ -24,3 +24,8 @@
 p.button {
   cursor: default;
 }
+
+
+.top-bar-left select {
+  margin: 0;
+}

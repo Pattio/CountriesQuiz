@@ -1,9 +1,9 @@
 <div class="game-screen row">
   <div class="small-12 large-3 columns info-panel">
-    <button type="button" class="expanded primary button"><strong>Game Info</strong></button>
-    <button type="button" class="expanded success button">Question: <a class="question_number"><%= question_number current_user.game_session.Score %></a></button>
-    <button type="button" class="expanded success button">Score: <a class="score"><%= current_user.game_session.Score %></a></button>
-    <button type="button" class="expanded success button">High Score: <a class="highscore"> <%= current_user.highscore %></a></button>
+    <button type="button" class="expanded primary button"><strong><%= t('game.info') %></strong></button>
+    <button type="button" class="expanded success button"><%= t('game.question') %> <a class="question_number"><%= question_number current_user.game_session.Score %></a></button>
+    <button type="button" class="expanded success button"><%= t('game.score') %> <a class="score"><%= current_user.game_session.Score %></a></button>
+    <button type="button" class="expanded success button"><%= t('game.highscore') %><a class="highscore"> <%= current_user.highscore %></a></button>
   </div>
   <div class="small-12 large-9 columns">
     <div class="callout primary question">

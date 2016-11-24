@@ -20,4 +20,43 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    label:
+      resource:
+        name: 'Customized title'
+  menu:
+    name: "Menu"
+    play: "Play"
+    explore: "Explore"
+    profile: "Profile"
+    logout: "Log out"
+    sign_in: "Sign in"
+    sign_up: "Sign up"
+    search: "Search"
+    search_placeholder: "Search for country"
+  game:
+    info: "Game Info"
+    question: "Question:"
+    score: "Score:"
+    highscore: "High Score:"
+  explore:
+    name: "Country Name"
+    flag: "Flag"
+    current: "Current"
+    description: "Data description"
+    results: "Results"
+  profile:
+    edit: "Edit Profile"
+    name: "Name"
+    email: "Email"
+    waiting: "Currently waiting confirmation for"
+    password: "Password"
+    password_info: "leave blank if you don't want to change it"
+    password_min: "characters minimum"
+    password_confirm: "Password confirmation"
+    password_current: "Current password"
+    password_current_info: "we need your current password to confirm your changes"
+    update: "Update"
+    delete: "Delete my profile"
+    confirm: "Are you sure?"
+    back: "Back"

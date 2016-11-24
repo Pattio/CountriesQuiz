@@ -15,29 +15,33 @@
 
   <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle></button>
-    <div class="title-bar-title">Menu</div>
+    <div class="title-bar-title"><%= t('menu.name') %></div>
   </div>
 
   <div class="top-bar" id="menu">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">Countries Quiz</li>
-        <li><%= link_to 'Play', root_path %></li>
-        <li><%= link_to 'Explore', countries_path %></li>
-        <li><a href="#">About</a></li>
+        <li><%= link_to t('menu.play'), root_path %></li>
+        <li><%= link_to t('menu.explore'), countries_path %></li>
         <li>
           <% if user_signed_in? %>
             <a href="/"><%= current_user.name %></a>
             <ul class="menu vertical">
-              <li><%= link_to 'Profile', edit_user_registration_path %></li>
+              <li><%= link_to t('menu.profile'), edit_user_registration_path %></li>
               <% if current_user.isAdmin? %>
               <li><a href="#">Dashboard</a></li>
               <% end %>
-              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to t('menu.logout'), destroy_user_session_path, method: :delete %></li>
             </ul>
           <% else %>
-            <li><%= link_to 'Sign In', new_user_session_path %> </li>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to t('menu.sign_in'), new_user_session_path %> </li>
+            <li><%= link_to t('menu.sign_up'), new_user_registration_path %></li>
+          <% end %>
+        </li>
+        <li>
+          <%= form_tag(request.original_url, method: "get") do %>
+            <%= select_tag("lang", options_for_select([['EN', 'en'], ['LT', 'lt']], :selected => I18n.locale), onchange: "this.form.submit();") %>
           <% end %>
         </li>
       </ul>
@@ -46,10 +50,11 @@
       <ul class="menu">
         <div class="row">
         <%= form_tag(countries_path, method: "get") do %>
-          <li class="float-left"><%= text_field_tag :search, params[:search], placeholder: "Search for country" %></li>
-          <li class="float-left"><%= submit_tag "Search", class: "button" %> </li>
+          <li class="float-left"><%= text_field_tag :search, params[:search], placeholder: t('menu.search_placeholder') %></li>
+          <li class="float-left"><%= submit_tag t('menu.search'), class: "button" %> </li>
         <% end %>
         </div>
+
       </ul>
     </div>
   </div>
