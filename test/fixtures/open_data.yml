@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  CountryName: MyString
+uk:
+  id: 1
+  CountryName: United Kingdom
   Description: MyText
   Unit: MyString
   Value: MyString
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
 
 two:
-  CountryName: MyString
+  id: 2
+  CountryName: Belgium
   Description: MyText
   Unit: MyString
   Value: MyString
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
