@@ -14,16 +14,18 @@ class GameController < ApplicationController
       @question = generate_question
       @records = OpenData.where(Description: @question).order("RANDOM()").limit(4)
       @answer = @records.sample
-
+      @unit = @answer.Unit
+      
       options = String.new
       @records.each do |record|
         options << record.id.to_s
         options << "|" if @records.last != record
       end
-      current_user.create_game_session(Question: @question, Score: 0, Answer: @answer.id, Options: options)
+      current_user.create_game_session(Question: @question, Score: 0, Answer: @answer.id, Options: options, QuestionUnit: @answer.Unit)
     else
       @question = game_session.Question
       @answer = OpenData.find(game_session.Answer)
+      @unit = game_session.QuestionUnit
       options = game_session.Options
       countries = options.split("|").map(&:to_i)
       @records = Array.new
@@ -46,6 +48,7 @@ class GameController < ApplicationController
         @question = generate_question
         @records = OpenData.where(Description: @question).order("RANDOM()").limit(4)
         @answer = @records.sample
+        @unit = @answer.Unit
         @score = game_session.Score
         @score += 50
         @highscore = current_user.highscore
@@ -62,7 +65,7 @@ class GameController < ApplicationController
           options << record.id.to_s
           options << "|" if @records.last != record
         end
-        game_session.update_attributes(Question: @question, Score: @score, Answer: @answer.id, Options: options)
+        game_session.update_attributes(Question: @question, Score: @score, Answer: @answer.id, Options: options, QuestionUnit: @unit)
 
         format.html { redirect_to root_path }
         format.js { }

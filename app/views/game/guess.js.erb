@@ -1,7 +1,7 @@
 <% if @answer %>
 
 // Update question
-$(".question h6").text("<%= @question %> is equal to <%= @answer.Value %>");
+$(".question h6").text("<%= @question %> is equal to <%= @answer.Value %> <%= @unit if @unit != "Unit" %>");
 
 // Remove old options
 $(".options").empty();

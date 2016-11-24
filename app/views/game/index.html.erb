@@ -7,7 +7,7 @@
   </div>
   <div class="small-12 large-9 columns">
     <div class="callout primary question">
-      <h6><%= @question %> is equal to <%= @answer.Value %></h6>
+      <h6><%= @question %> is equal to <%= @answer.Value %> <%= @unit if @unit != "Unit" %></h6>
     </div>
     <%= @session %>
     <div class="row small-up-4 medium-up-4 large-up-4 options">

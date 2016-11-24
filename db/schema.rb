@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123134956) do
+ActiveRecord::Schema.define(version: 20161124161306) do
 
   create_table "game_sessions", force: :cascade do |t|
     t.text     "Question"
@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20161123134956) do
     t.integer  "Answer"
     t.text     "Options"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "QuestionUnit"
     t.index ["user_id"], name: "index_game_sessions_on_user_id"
   end
 

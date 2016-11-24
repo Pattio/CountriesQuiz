@@ -22,7 +22,7 @@
     <% @data.each do |data| %>
       <tr>
         <td><%= data.Description %></td>
-        <td><%= data.Value %> <%= data.Unit %></td>
+        <td><%= data.Value %> <%= data.Unit if data.Unit != "Unit" %></td>
       </tr>
     <% end %>
   </tbody>
