@@ -1,0 +1,29 @@
+<h1><%= @country.CountryName %> <%= image_tag(@country.CountryName.tr(' ', '-'), :alt => @country.CountryName, :class => 'flag') %></h1>
+
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Explore", countries_path %></li>
+    <li>
+      <span class="show-for-sr">Current: </span> <%= @country.CountryName %>
+    </li>
+  </ul>
+</nav>
+
+
+<table class="hover">
+  <thead>
+    <tr>
+      <th>Data description</th>
+      <th>2015 Results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @data.each do |data| %>
+      <tr>
+        <td><%= data.Description %></td>
+        <td><%= data.Value %> <%= data.Unit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

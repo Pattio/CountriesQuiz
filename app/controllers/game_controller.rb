@@ -70,7 +70,6 @@ class GameController < ApplicationController
         current_user.game_session = nil
         format.html { redirect_to root_path }
         format.js { }
-        # format.js { render :js => 'window.location.replace("http://stackoverflow.com");' }
       end
     end
   end

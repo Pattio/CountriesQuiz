@@ -23,7 +23,7 @@
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">Countries Quiz</li>
         <li><%= link_to 'Play', root_path %></li>
-        <li><a href="#">Explore</a></li>
+        <li><%= link_to 'Explore', countries_path %></li>
         <li><a href="#">About</a></li>
         <li>
           <% if user_signed_in? %>

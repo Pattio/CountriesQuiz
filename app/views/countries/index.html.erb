@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Country Name</th>
+      <th>Flag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @opendata.each do |data| %>
+      <tr class="country-row" data-href="<%= country_path(data) %>">
+        <td><%= data.CountryName %></td>
+        <td><%= image_tag(data.CountryName.tr(' ', '-'), :alt => data.CountryName, :class => 'flag') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
