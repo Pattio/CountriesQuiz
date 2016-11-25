@@ -6,11 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @opendata.each do |data| %>
-      <% puts data.attributes %>
-      <tr class="country-row" data-href="<%= country_path(data) %>">
-        <td><%= data.CountryName %></td>
-        <td><%= image_tag(data.CountryName.tr(' ', '-'), :alt => data.CountryName, :class => 'flag') %></td>
+    <% @countries.each do |name, id| %>
+      <tr class="country-row" data-href="<%= country_path(id) %>">
+        <td><%= name %></td>
+        <td><%= image_tag(name.tr(' ', '-'), :alt => name, :class => 'flag') %></td>
       </tr>
     <% end %>
   </tbody>

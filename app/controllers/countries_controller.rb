@@ -1,7 +1,10 @@
 class CountriesController < ApplicationController
   def index
-    # @opendata = OpenData.group(:CountryName)
-    @opendata = OpenData.select('distinct on (open_data.CountryName) *')
+    @countries = Hash.new
+    OpenData.all.each do |data|
+      @countries[data.CountryName] = data.id
+    end
+
     if params[:search]
       @opendata = @opendata.search(params[:search])
     end
