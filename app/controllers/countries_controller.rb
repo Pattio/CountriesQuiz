@@ -1,12 +1,14 @@
 class CountriesController < ApplicationController
   def index
     @countries = Hash.new
-    OpenData.all.each do |data|
-      @countries[data.CountryName] = data.id
-    end
-
     if params[:search]
-      @opendata = @opendata.search(params[:search])
+      OpenData.search(params[:search]).each do |result|
+        @countries[result.CountryName] = result.id
+      end
+    else
+      OpenData.all.each do |data|
+        @countries[data.CountryName] = data.id
+      end
     end
   end
 
