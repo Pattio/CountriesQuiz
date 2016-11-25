@@ -60,12 +60,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'countriesquiz.herokuapp.com' }
 
   ActionMailer::Base.smtp_settings = {
-      :address        => 'smtp.mailgun.org',
+      :address        => 'smtp.sendgrid.net',
       :port           => '587',
       :authentication => :plain,
-      :user_name      => 'postmaster@sandboxa1ea7e6db9d94054b7b123140d85a8f1.mailgun.org',
-      :password       => '72eef772953bc201be1654c1bd5fca0e',
-      :domain         => 'countriesquiz.heroku.com',
+      :user_name      => ENV['SENDGRID_USERNAME'],
+      :password       => ENV['SENDGRID_PASSWORD'],
+      :domain         => 'heroku.com',
       :enable_starttls_auto => true
   }
 
