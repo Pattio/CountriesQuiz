@@ -30,7 +30,7 @@
             <ul class="menu vertical">
               <li><%= link_to t('menu.profile'), edit_user_registration_path %></li>
               <% if current_user.isAdmin? %>
-              <li><a href="#">Dashboard</a></li>
+              <li><%= link_to t('menu.dashboard'), dashboard_path %></li>
               <% end %>
               <li><%= link_to t('menu.logout'), destroy_user_session_path, method: :delete %></li>
             </ul>

@@ -9,6 +9,7 @@ lt:
     sign_up: "Registruotis"
     search: "Ieškoti"
     search_placeholder: "Ieškoti šalies"
+    dashboard: "Skydelis"
   game:
     info: "Žaidimo informacija"
     question: "Klausimas:"
