@@ -4,6 +4,7 @@
     <button type="button" class="expanded success button"><%= t('game.question') %> <a class="question_number"><%= question_number current_user.game_session.Score %></a></button>
     <button type="button" class="expanded success button"><%= t('game.score') %> <a class="score"><%= current_user.game_session.Score %></a></button>
     <button type="button" class="expanded success button"><%= t('game.highscore') %><a class="highscore"> <%= current_user.highscore %></a></button>
+    <button type="button" class="expanded success button"><%= t('game.total') %><a> <%= current_user.totalPlays %></a></button>
   </div>
   <div class="small-12 large-9 columns">
     <div class="callout question">
