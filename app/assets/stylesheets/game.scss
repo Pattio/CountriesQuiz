@@ -4,30 +4,56 @@
 
 .game-screen {
   margin-top: 4rem;
+
+  .question {
+    background: #2199e8;
+    color: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 1rem;
+  }
+
   .info-panel {
     padding-top: 1em;
     border: 0.05em solid #ebebeb;
   }
 
-  .flag {
-    border: 0.2em solid #ebebeb;
-    border-radius: 1rem;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-  }
+  .options {
+    margin: 2rem 0 2rem 0;
 
-  .flag.active{
-    border-color: #333333;
-  }
+    .country-name {
+      text-align: center;
+    }
 
-  .flag.wrong, .flag.wrong:hover {
-    border-color: red;
-  }
+    .country-name.correct {
+      color: #27ae60;
+      font-weight: bold;
+    }
 
-  .flag.correct, .flag.correct:hover {
-    border-color: green;
+    .country-name.wrong {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+
+    .flag {
+      border: 0.2em solid #ebebeb;
+      border-radius: 1rem;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    .flag.active{
+      border-color: #333333;
+    }
+
+    .flag.wrong, .flag.wrong:hover {
+      border-color: #e74c3c;
+    }
+
+    .flag.correct, .flag.correct:hover {
+      border-color: #27ae60;
+    }
   }
 
   .callout.wrong {

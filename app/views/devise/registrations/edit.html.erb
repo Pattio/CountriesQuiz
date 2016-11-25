@@ -43,6 +43,6 @@
 <hr>
 <h3><%= t('profile.delete') %></h3>
 
-<p><%= button_to t('profile.delete'), registration_path(resource_name), data: { confirm: t('profile.confirm') }, method: :delete %></p>
+<p><%= button_to t('profile.delete'), registration_path(resource_name), data: { confirm: t('profile.confirm') }, method: :delete, class: "button alert" %></p>
 
 <%= link_to t('profile.back'), :back %>
