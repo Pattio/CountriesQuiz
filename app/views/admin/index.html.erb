@@ -1,4 +1,4 @@
-<h1>Dashboard</h1>
+<h1><%= t('menu.dashboard') %></h1>
 
 <nav aria-label="You are here:" role="navigation">
   <ul class="breadcrumbs">
@@ -14,12 +14,12 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Username</th>
-      <th>E-Mail</th>
-      <th class="text-center">High Score</th>
-      <th class="text-center">Total Plays</th>
-      <th>Role</th>
-      <th class="text-center">Action</th>
+      <th><%= User.human_attribute_name("name") %></th>
+      <th><%= User.human_attribute_name("email") %></th>
+      <th class="text-center"><%= User.human_attribute_name("highscore") %></th>
+      <th class="text-center"><%= User.human_attribute_name("totalPlays") %></th>
+      <th><%= t('dashboard.role') %></th>
+      <th class="text-center"><%= t('dashboard.action') %></th>
     </tr>
   </thead>
   <tbody>
@@ -30,13 +30,13 @@
       <td><%= user.email %></td>
       <td class="text-center"><%= user.highscore %></td>
       <td class="text-center"><%= user.totalPlays %></td>
-      <td><%= user.isAdmin ? "Admin" : "User" %></td>
+      <td><%= user.isAdmin ? t('dashboard.admin') : t('dashboard.user') %></td>
       <td class="text-center">
-        <%= link_to user.isAdmin ? "Forbid" : "Grant", role_change_path(id: user.id), method: :patch,
-                                          data: { confirm: "You sure?" } %> |
+        <%= link_to user.isAdmin ? t('dashboard.forbid') : t('dashboard.grant'), role_change_path(id: user.id), method: :patch,
+                                          data: { confirm: t('dashboard.confirm') } %> |
 
-        <%= link_to "Delete", destroy_path(id: user.id), method: :delete,
-                                          data: { confirm: "You sure?" } %>
+        <%= link_to t('dashboard.delete'), destroy_path(id: user.id), method: :delete,
+                                          data: { confirm: t('dashboard.confirm') } %>
       </td>
     </tr>
     <% end %>

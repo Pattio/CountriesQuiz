@@ -37,6 +37,15 @@ lt:
     delete: "Ištrinti mano paskyrą"
     confirm: "Ar tikrai norite ištrinti?"
     back: "Grįžti atgal"
+  dashboard:
+    role: "Grupė"
+    action: "Veiksmas"
+    admin: "Adminas"
+    user: "Vartotojas"
+    forbid: "Uždrausti"
+    grant: "Suteikti"
+    delete: "Ištrinti"
+    confirm: "Ar tikrai?"
   activerecord:
     attributes:
         user:
@@ -46,6 +55,8 @@ lt:
           password_confirmation: "Pakartokite slaptažodį"
           current_password: "Dabartinis slaptažodis"
           remember_me: "Atsiminti mane"
+          highscore: "Rekordas"
+          totalPlays: "Viso žaidimų"
     errors:
       models:
         user:

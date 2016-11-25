@@ -62,3 +62,12 @@ en:
     delete: "Delete my profile"
     confirm: "Are you sure?"
     back: "Back"
+  dashboard:
+    role: "Role"
+    action: "Action"
+    admin: "Admin"
+    user: "User"
+    forbid: "Forbid"
+    grant: "Grant"
+    delete: "Delete"
+    confirm: "You sure?"
