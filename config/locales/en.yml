@@ -34,6 +34,7 @@ en:
     sign_up: "Sign up"
     search: "Search"
     search_placeholder: "Search for country"
+    dashboard: "Dashboard"
   game:
     info: "Game Info"
     question: "Question:"
