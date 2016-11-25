@@ -9,7 +9,7 @@
     <% @countries.each do |name, id| %>
       <tr class="country-row" data-href="<%= country_path(id) %>">
         <td><%= name %></td>
-        <td><%= image_tag(name.tr(' ', '-'), :alt => name, :class => 'flag') %></td>
+        <td><%= image_tag(name.tr(' ', '-') + ".png", :alt => name, :class => 'flag') %></td>
       </tr>
     <% end %>
   </tbody>
