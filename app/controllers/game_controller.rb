@@ -24,21 +24,17 @@ class GameController < ApplicationController
       current_user.create_game_session(Question: @question, Score: 0, Answer: @answer.id, Options: options, QuestionUnit: @answer.Unit)
     else
       @question = game_session.Question
-      @answer = OpenData.find(game_session.Answer)
       @unit = game_session.QuestionUnit
       options = game_session.Options
       countries = options.split("|").map(&:to_i)
-      @records = Array.new
-      countries.each do |country|
-        @records << OpenData.find(country)
-      end
+      @records = OpenData.where(id: countries)
+      @records.collect { |rec| @answer = rec if rec.id == game_session.Answer }
     end
 
   end
 
   def guess
     game_session = current_user.game_session
-    # TODO: Sanitize user guess
     @guessID = params[:country_id]
     @answerID = game_session.Answer.to_s
 
