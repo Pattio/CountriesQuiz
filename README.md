@@ -1,24 +1,19 @@
-# README
+# CountriesQuiz
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CountriesQuiz is interactive trivia style game. CountriesQuiz was developed using RoR framework for advanced web application development course.
 
-Things you may want to cover:
+# Installation
 
-* Ruby version
+1. Download project files
+2. Run DB migration
+```
+rails db:migrate
+```
+3. Seed open data from CountryProfiles.csv
+```
+rails db:seed
+```
 
-* System dependencies
+# Open data
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Open data source link](http://data.worldbank.org/data-catalog/country-profiles)
