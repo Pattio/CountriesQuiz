@@ -15,6 +15,7 @@ lt:
     question: "Klausimas:"
     score: "Rezultatas:"
     highscore: "Rekordas:"
+    total: "Viso žaidimų:"
   explore:
     name: "Šalies pavadinimas"
     flag: "Vėliava"

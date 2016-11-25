@@ -15,7 +15,7 @@ class GameController < ApplicationController
       @records = OpenData.where(Description: @question).order("RANDOM()").limit(4)
       @answer = @records.sample
       @unit = @answer.Unit
-
+      current_user.update_attributes(totalPlays: current_user.totalPlays + 1)
       options = String.new
       @records.each do |record|
         options << record.id.to_s
@@ -52,8 +52,6 @@ class GameController < ApplicationController
         @score = game_session.Score
         @score += 50
         @highscore = current_user.highscore
-        @totalPlays = current_user.totalPlays + 1
-        current_user.update_attributes(totalPlays: @totalPlays)
 
         if @highscore < @score
           @highscore = @score
