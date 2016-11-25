@@ -21,7 +21,7 @@
   <div class="top-bar" id="menu">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">Countries Quiz</li>
+        <li class="menu-text logo">Countries Quiz</li>
         <li><%= link_to t('menu.play'), root_path %></li>
         <li><%= link_to t('menu.explore'), countries_path %></li>
         <li>
@@ -60,8 +60,24 @@
   </div>
 
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if alert %>
+      <div class="callout alert-custom" data-closable>
+        <%= alert %>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <% end %>
+
+      <% if notice %>
+      <div class="callout notice" data-closable>
+        <p><%= notice %></p>
+        <button class="close-button" aria-label="Dismiss notice" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>

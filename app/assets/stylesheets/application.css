@@ -16,6 +16,50 @@
 
  */
 
+body {
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+.alert-custom {
+  margin: 1rem 0 0 0;
+  background: #e74c3c;
+  color: #782920;
+  border: 0.1em solid #c0392b;
+}
+
+.alert-custom button.close-button {
+  color: #c0392b;
+}
+
+.notice {
+  margin: 1rem 0 0 0;
+  background: #19B5FE;
+  color: #0d6f9d;
+  border: 0.1em solid #0d6f9d;
+}
+
+.notice button.close-button {
+  color: #0d6f9d;
+}
+
+.menu-text {
+  color: #fff;
+}
+
+ul.menu li a {
+  color: #19B5FE;
+}
+
+ul.menu li a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.is-dropdown-submenu {
+  border-color: #2c3e50;
+}
+
+
 .container {
   max-width: 800px;
   margin: 0 auto;

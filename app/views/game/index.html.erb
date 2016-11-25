@@ -6,7 +6,7 @@
     <button type="button" class="expanded success button"><%= t('game.highscore') %><a class="highscore"> <%= current_user.highscore %></a></button>
   </div>
   <div class="small-12 large-9 columns">
-    <div class="callout primary question">
+    <div class="callout question">
       <h6><%= @question %> is equal to <%= @answer.Value %> <%= @unit if @unit != "Unit" %></h6>
     </div>
     <%= @session %>
@@ -14,8 +14,8 @@
       <% @records.each do |r|%>
       <div class="column">
         <%= link_to root_path, data: { method: :post, remote: true, params: { country_id: r.id }.to_param } do %>
-          <%= image_tag(r.CountryName.tr(' ', '-') + ".png", :alt => r.CountryName, :class => 'flag') %>
-          <p class='country_name'> <%= r.CountryName %> </p>
+          <%= image_tag(r.CountryName.tr(' ', '-') + ".png", :alt => r.CountryName, :class => 'flag float-center') %>
+          <p class='country-name'> <%= r.CountryName %> </p>
         <% end %>
       </div>
       <% end %>
