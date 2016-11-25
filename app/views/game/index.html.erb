@@ -14,7 +14,7 @@
       <% @records.each do |r|%>
       <div class="column">
         <%= link_to root_path, data: { method: :post, remote: true, params: { country_id: r.id }.to_param } do %>
-          <%= image_tag(r.CountryName.tr(' ', '-'), :alt => r.CountryName, :class => 'flag') %>
+          <%= image_tag(r.CountryName.tr(' ', '-') + ".png", :alt => r.CountryName, :class => 'flag') %>
           <p class='country_name'> <%= r.CountryName %> </p>
         <% end %>
       </div>
