@@ -5,11 +5,15 @@ CountriesQuiz is interactive trivia style game. CountriesQuiz was developed usin
 # Installation
 
 1. Download project files
-2. Run DB migration
+2. Run bundler
+```
+bundle
+```
+3. Run DB migration
 ```
 rails db:migrate
 ```
-3. Seed open data from CountryProfiles.csv
+4. Seed open data from CountryProfiles.csv
 ```
 rails db:seed
 ```
