@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
   def index
     # @opendata = OpenData.group(:CountryName)
-    @opendata = OpenData.select('distinct on (CountryName) *')
+    @opendata = OpenData.select('distinct on (open_data.CountryName) *')
     if params[:search]
       @opendata = @opendata.search(params[:search])
     end
