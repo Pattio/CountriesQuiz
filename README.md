@@ -1,6 +1,8 @@
 # CountriesQuiz
 
-CountriesQuiz is interactive trivia style game. CountriesQuiz was developed using RoR framework for advanced web application development course.
+CountriesQuiz is interactive trivia style game. CountriesQuiz was developed using Ruby on Rails for advanced web application development course. CountriesQuiz is available at: http://countriesquiz.herokuapp.com
+
+<img src="/preview.gif" width="600" alt="Normal disk"/>
 
 # Installation
 
